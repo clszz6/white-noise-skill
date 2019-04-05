@@ -1,0 +1,5 @@
+{
+    "expected_dialog": "noise.white",
+    "intent_type": "noise.white.intent",
+    "utterance": "Play some white noise"
+}
