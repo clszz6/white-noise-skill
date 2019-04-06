@@ -13,47 +13,78 @@ from mycroft.audio import wait_while_speaking
 from mycroft import MycroftSkill, intent_file_handler
 from mycroft.skills.context import *
 
-class BedtimeStories(MycroftSkill):
+
+class WhiteNoiseAudio(MycroftSkill):
     def __init__(self):
         MycroftSkill.__init__(self)
         
     def initialize(self):
         
-        #Register list of story titles that are held in a padatious entity
+        # Register list of white noise titles that are held in a padatious entity
         self.register_entity_file("title.entity")
         self.process = None
         
-        #Build story list
+        # Build white noise list
         self.play_list = {
-            'twas the night before christmas': join(abspath(dirname(__file__)), 'stories', 'twas_the_night_before_christmas.mp3'),    
-            'little red riding hood': join(abspath(dirname(__file__)), 'stories', 'little_red_riding_hood.mp3'),
-            'the three bears': join(abspath(dirname(__file__)), 'stories', 'the_three_bears.mp3'),
-            'hansel and gretel': join(abspath(dirname(__file__)), 'stories', 'hansel_and_gretel.mp3'),
-            'the velveteen rabbit': join(abspath(dirname(__file__)), 'stories', 'the_velveteen_rabbit.mp3'),
-            'rumplestiltskin': join(abspath(dirname(__file__)), 'stories', 'rumplestiltskin.mp3'),
-            'the emporers new clothes': join(abspath(dirname(__file__)), 'stories', 'the_emporers_new_clothes.mp3'),
-            'the princess on the pea': join(abspath(dirname(__file__)), 'stories', 'the_princess_on_the_pea.mp3'),
-            'the elves and the shoemaker': join(abspath(dirname(__file__)), 'stories', 'the_elves_and_the_shoemaker.mp3'),
-            'the three billy goats gruff': join(abspath(dirname(__file__)), 'stories', 'the_three_billy_goats_gruff.mp3'),
-            'peter rabbit': join(abspath(dirname(__file__)), 'stories', 'peter_rabbit.mp3'),
+            'blender one': join(abspath(dirname(__file__)), 'stories', 'blender-1.mp3'),
+            'blender two': join(abspath(dirname(__file__)), 'stories', 'blender-2.mp3'),
+            'dryer one': join(abspath(dirname(__file__)), 'stories', 'dryer-1.mp3'),
+            'dryer two': join(abspath(dirname(__file__)), 'stories', 'dryer-2.mp3'),
+            'fan one': join(abspath(dirname(__file__)), 'stories', 'fan-1.mp3'),
+            'fan two': join(abspath(dirname(__file__)), 'stories', 'fan-2.mp3'),
+            'heater one': join(abspath(dirname(__file__)), 'stories', 'heater-1.mp3'),
+            'heater 2': join(abspath(dirname(__file__)), 'stories', 'heater-2.mp3'),
+            'motor': join(abspath(dirname(__file__)), 'stories', 'motor.mp3'),
+            'ocean one': join(abspath(dirname(__file__)), 'stories', 'ocean-1.mp3'),
+            'ocean two': join(abspath(dirname(__file__)), 'stories', 'ocean-2.mp3'),
+            'ocean three': join(abspath(dirname(__file__)), 'stories', 'ocean-3.mp3'),
+            'ocean four': join(abspath(dirname(__file__)), 'stories', 'ocean-4.mp3'),
+            'pink noise': join(abspath(dirname(__file__)), 'stories', 'pink-noise.mp3'),
+            'rain one': join(abspath(dirname(__file__)), 'stories', 'rain-1.mp3'),
+            'rain two': join(abspath(dirname(__file__)), 'stories', 'rain-2.mp3'),
+            'rain three': join(abspath(dirname(__file__)), 'stories', 'rain-3.mp3'),
+            'rain four': join(abspath(dirname(__file__)), 'stories', 'rain-4.mp3'),
+            'refrigerator': join(abspath(dirname(__file__)), 'stories', 'refrigerator.mp3'),
+            'shower': join(abspath(dirname(__file__)), 'stories', 'shower.mp3'),
+            'storm': join(abspath(dirname(__file__)), 'stories', 'storm.mp3'),
+            'stream one': join(abspath(dirname(__file__)), 'stories', 'stream-1.mp3'),
+            'stream two': join(abspath(dirname(__file__)), 'stories', 'stream-2.mp3'),
+            'train one': join(abspath(dirname(__file__)), 'stories', 'train-1.mp3'),
+            'train two': join(abspath(dirname(__file__)), 'stories', 'train-2.mp3'),
+            'underwater one': join(abspath(dirname(__file__)), 'stories', 'underwater-1.mp3'),
+            'underwater two': join(abspath(dirname(__file__)), 'stories', 'underwater-2.mp3'),
+            'vacuum': join(abspath(dirname(__file__)), 'stories', 'vaccuum.mp3'),
+            'water': join(abspath(dirname(__file__)), 'stories', 'water.mp3'),
+            'water boiling one': join(abspath(dirname(__file__)), 'stories', 'water-boiling-1.mp3'),
+            'water boiling two': join(abspath(dirname(__file__)), 'stories', 'water-boiling-2.mp3'),
+            'water fall': join(abspath(dirname(__file__)), 'stories', 'waterfall.mp3'),
+            'waves one': join(abspath(dirname(__file__)), 'stories', 'waves-1.mp3'),
+            'waves two': join(abspath(dirname(__file__)), 'stories', 'waves-2.mp3'),
+            'white noise one': join(abspath(dirname(__file__)), 'stories', 'white-noise-1.mp3'),
+            'white noise two': join(abspath(dirname(__file__)), 'stories', 'white-noise-2.mp3'),
+            'white noise three': join(abspath(dirname(__file__)), 'stories', 'white-noise-3.mp3'),
+            'white noise four': join(abspath(dirname(__file__)), 'stories', 'white-noise-4.mp3'),
+            'white noise five': join(abspath(dirname(__file__)), 'stories', 'white-noise-5.mp3'),
+            'white noise six': join(abspath(dirname(__file__)), 'stories', 'white-noise-6.mp3'),
+
         }
 
-    #Play random story from list
-    @intent_file_handler('stories.bedtime.intent')
-    def handle_stories_bedtime(self, message):
+    #Play random white noise from list
+    @intent_file_handler('white-noise.relax.intent')
+    def white_noise_relax(self, message):
         wait_while_speaking()
-        self.speak_dialog('stories.bedtime')
-        story_file = list(self.play_list.values())
-        story_file = random.choice(story_file)
-        print(story_file)
-        #if os.path.isfile(story_file):
+        self.speak_dialog('white-noise.relax')
+        white_noise_file = list(self.play_list.values())
+        white_noise_file = random.choice(white_noise_file)
+        print(white_noise_file)
+        # if os.path.isfile(white_noise_file):
         wait_while_speaking()
-        self.process = play_mp3(story_file)
+        self.process = play_mp3(white_noise_file)
 
-    #Pick story by title
-    @intent_file_handler('pick.story.intent')
-    def handle_pick_story(self, message):
-        self.speak_dialog('pick.story')
+    #Pick white noise by title
+    @intent_file_handler('pick.white-noise.intent')
+    def handle_pick_white_noise(self, message):
+        self.speak_dialog('pick.white-noise')
         wait_while_speaking()
         title = message.data.get('title')
         score = match_one(title, self.play_list)
@@ -62,15 +93,15 @@ class BedtimeStories(MycroftSkill):
             self.process = play_mp3(score[0])
         else:
             return None
-            self.speak('Sorry I could not find that sound in my library')
+            self.speak('Sorry I could not find that white noise in my library')
 
     #List stories in library
-    @intent_file_handler('list.stories.intent')
+    @intent_file_handler('list.white-noise.intent')
     def handle_list_stories(self, message):
         wait_while_speaking()
-        story_list = list(self.play_list.keys())
-        print(story_list)
-        self.speak_dialog('list.stories', data=dict(stories=story_list))
+        white_noise_list = list(self.play_list.keys())
+        print(white_noise_list)
+        self.speak_dialog('list.white-noise', data=dict(stories=white_noise_list))
     
     def stop(self):
         if self.process and self.process.poll() is None:
@@ -78,4 +109,4 @@ class BedtimeStories(MycroftSkill):
             self.process.wait()
 
 def create_skill():
-    return BedtimeStories()
+    return WhiteNoiseAudio()
