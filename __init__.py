@@ -19,17 +19,17 @@ from multiprocessing import Process, Manager
 def initialize(self):
         self.register_entity_file('duration.entity')
 
-def play_noise(mp3):
-        play_mp3(mp3)
-    
 
-def kill_noise(killtime):
-    time.sleep(killtime)
-    self.process.terminate()
 
 class WhiteNoiseAudio(MycroftSkill):
 
+    def play_noise(mp3):
+        play_mp3(mp3)
     
+
+    def kill_noise(killtime):
+        time.sleep(killtime)
+        self.process.terminate()
 
     def __init__(self):
         MycroftSkill.__init__(self)
@@ -120,8 +120,8 @@ class WhiteNoiseAudio(MycroftSkill):
         # if os.path.isfile(white_noise_file):
         wait_while_speaking()
         # self.process = play_mp3(white_noise_file)
-        self.process = Process(target=play_noise,args=(white_noise_file,))
-        self.kill = Process(target=kill_noise,args=(secs,))
+        self.process = Process(target=self.play_noise,args=(white_noise_file,))
+        self.kill = Process(target=self.kill_noise,args=(secs,))
 
         self.process.start()
         self.kill.start()
