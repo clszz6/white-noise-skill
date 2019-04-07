@@ -23,10 +23,6 @@ def initialize(self):
 
 class WhiteNoiseAudio(MycroftSkill):
 
-    def play_noise(self,mp3):
-        play_mp3(mp3)
-    
-
     def kill_noise(self,killtime):
         time.sleep(killtime)
         self.log.info('killing')
@@ -120,11 +116,9 @@ class WhiteNoiseAudio(MycroftSkill):
         print(white_noise_file)
         # if os.path.isfile(white_noise_file):
         wait_while_speaking()
-        # self.process = play_mp3(white_noise_file)
-        self.process = Process(target=self.play_noise,args=(white_noise_file,))
+        self.process = play_mp3(white_noise_file)
+        
         self.kill = Process(target=self.kill_noise,args=(secs,))
-
-        self.process.start()
         self.kill.start()
         
     #Pick white noise by title
@@ -150,13 +144,9 @@ class WhiteNoiseAudio(MycroftSkill):
         self.speak_dialog('list.white-noise', data=dict(white_noise=white_noise_list))
     
     def stop(self):
-        #if self.process and self.process.poll() is None:
-        try:
-            #if self.process.is_alive():
+        if self.process and self.process.poll() is None:
             self.process.terminate()
-            #self.process.wait()
-        except:
-            pass
+            self.process.wait()
 
 def create_skill():
     return WhiteNoiseAudio()
