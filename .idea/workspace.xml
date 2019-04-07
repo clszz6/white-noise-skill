@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e5d81e40-2e10-452d-8661-c66ec72b9cf1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/dialog/en-us/white-noise.relax.dialog" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vocab/en-us/pick.white-noise.intent" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vocab/en-us/title.entity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vocab/en-us/white-noise.relax.intent" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,8 +42,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="112" lean-forward="true" selection-start-line="112" selection-end-line="112" />
+            <state relative-caret-position="519">
+              <caret line="102" column="31" lean-forward="true" selection-start-line="102" selection-start-column="31" selection-end-line="102" selection-end-column="31" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
               </folding>
@@ -113,6 +109,8 @@
       <find>story</find>
       <find>handle_list_stories</find>
       <find>create_skill</find>
+      <find>getLogger</find>
+      <find>stories</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -124,11 +122,11 @@
         <option value="$PROJECT_DIR$/dialog/en-us/list.white-noise.dialog" />
         <option value="$PROJECT_DIR$/dialog/en-us/pick.white-noise.dialog" />
         <option value="$PROJECT_DIR$/dialog/en-us/white-noise.relax.dialog" />
-        <option value="$PROJECT_DIR$/__init__.py" />
         <option value="$PROJECT_DIR$/vocab/en-us/pick.white-noise.intent" />
         <option value="$PROJECT_DIR$/vocab/en-us/white-noise.relax.intent" />
         <option value="$PROJECT_DIR$/vocab/en-us/title.entity" />
         <option value="$PROJECT_DIR$/vocab/en-us/list.white-noise.intent" />
+        <option value="$PROJECT_DIR$/__init__.py" />
       </list>
     </option>
   </component>
@@ -207,12 +205,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1554567183602</updated>
-      <workItem from="1554567185973" duration="3583000" />
+      <workItem from="1554567185973" duration="4314000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3583000" />
+    <option name="totallyTimeSpent" value="4314000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="797" extended-state="0" />
@@ -313,8 +311,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="112" lean-forward="true" selection-start-line="112" selection-end-line="112" />
+        <state relative-caret-position="519">
+          <caret line="102" column="31" lean-forward="true" selection-start-line="102" selection-start-column="31" selection-end-line="102" selection-end-column="31" />
           <folding>
             <element signature="e#0#42#0" expanded="true" />
           </folding>

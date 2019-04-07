@@ -26,46 +26,46 @@ class WhiteNoiseAudio(MycroftSkill):
         
         # Build white noise list
         self.play_list = {
-            'blender one': join(abspath(dirname(__file__)), 'stories', 'blender-1.mp3'),
-            'blender two': join(abspath(dirname(__file__)), 'stories', 'blender-2.mp3'),
-            'dryer one': join(abspath(dirname(__file__)), 'stories', 'dryer-1.mp3'),
-            'dryer two': join(abspath(dirname(__file__)), 'stories', 'dryer-2.mp3'),
-            'fan one': join(abspath(dirname(__file__)), 'stories', 'fan-1.mp3'),
-            'fan two': join(abspath(dirname(__file__)), 'stories', 'fan-2.mp3'),
-            'heater one': join(abspath(dirname(__file__)), 'stories', 'heater-1.mp3'),
-            'heater 2': join(abspath(dirname(__file__)), 'stories', 'heater-2.mp3'),
-            'motor': join(abspath(dirname(__file__)), 'stories', 'motor.mp3'),
-            'ocean one': join(abspath(dirname(__file__)), 'stories', 'ocean-1.mp3'),
-            'ocean two': join(abspath(dirname(__file__)), 'stories', 'ocean-2.mp3'),
-            'ocean three': join(abspath(dirname(__file__)), 'stories', 'ocean-3.mp3'),
-            'ocean four': join(abspath(dirname(__file__)), 'stories', 'ocean-4.mp3'),
-            'pink noise': join(abspath(dirname(__file__)), 'stories', 'pink-noise.mp3'),
-            'rain one': join(abspath(dirname(__file__)), 'stories', 'rain-1.mp3'),
-            'rain two': join(abspath(dirname(__file__)), 'stories', 'rain-2.mp3'),
-            'rain three': join(abspath(dirname(__file__)), 'stories', 'rain-3.mp3'),
-            'rain four': join(abspath(dirname(__file__)), 'stories', 'rain-4.mp3'),
-            'refrigerator': join(abspath(dirname(__file__)), 'stories', 'refrigerator.mp3'),
-            'shower': join(abspath(dirname(__file__)), 'stories', 'shower.mp3'),
-            'storm': join(abspath(dirname(__file__)), 'stories', 'storm.mp3'),
-            'stream one': join(abspath(dirname(__file__)), 'stories', 'stream-1.mp3'),
-            'stream two': join(abspath(dirname(__file__)), 'stories', 'stream-2.mp3'),
-            'train one': join(abspath(dirname(__file__)), 'stories', 'train-1.mp3'),
-            'train two': join(abspath(dirname(__file__)), 'stories', 'train-2.mp3'),
-            'underwater one': join(abspath(dirname(__file__)), 'stories', 'underwater-1.mp3'),
-            'underwater two': join(abspath(dirname(__file__)), 'stories', 'underwater-2.mp3'),
-            'vacuum': join(abspath(dirname(__file__)), 'stories', 'vaccuum.mp3'),
-            'water': join(abspath(dirname(__file__)), 'stories', 'water.mp3'),
-            'water boiling one': join(abspath(dirname(__file__)), 'stories', 'water-boiling-1.mp3'),
-            'water boiling two': join(abspath(dirname(__file__)), 'stories', 'water-boiling-2.mp3'),
-            'water fall': join(abspath(dirname(__file__)), 'stories', 'waterfall.mp3'),
-            'waves one': join(abspath(dirname(__file__)), 'stories', 'waves-1.mp3'),
-            'waves two': join(abspath(dirname(__file__)), 'stories', 'waves-2.mp3'),
-            'white noise one': join(abspath(dirname(__file__)), 'stories', 'white-noise-1.mp3'),
-            'white noise two': join(abspath(dirname(__file__)), 'stories', 'white-noise-2.mp3'),
-            'white noise three': join(abspath(dirname(__file__)), 'stories', 'white-noise-3.mp3'),
-            'white noise four': join(abspath(dirname(__file__)), 'stories', 'white-noise-4.mp3'),
-            'white noise five': join(abspath(dirname(__file__)), 'stories', 'white-noise-5.mp3'),
-            'white noise six': join(abspath(dirname(__file__)), 'stories', 'white-noise-6.mp3'),
+            'blender one': join(abspath(dirname(__file__)), 'white-noise', 'blender-1.mp3'),
+            'blender two': join(abspath(dirname(__file__)), 'white-noise', 'blender-2.mp3'),
+            'dryer one': join(abspath(dirname(__file__)), 'white-noise', 'dryer-1.mp3'),
+            'dryer two': join(abspath(dirname(__file__)), 'white-noise', 'dryer-2.mp3'),
+            'fan one': join(abspath(dirname(__file__)), 'white-noise', 'fan-1.mp3'),
+            'fan two': join(abspath(dirname(__file__)), 'white-noise', 'fan-2.mp3'),
+            'heater one': join(abspath(dirname(__file__)), 'white-noise', 'heater-1.mp3'),
+            'heater 2': join(abspath(dirname(__file__)), 'white-noise', 'heater-2.mp3'),
+            'motor': join(abspath(dirname(__file__)), 'white-noise', 'motor.mp3'),
+            'ocean one': join(abspath(dirname(__file__)), 'white-noise', 'ocean-1.mp3'),
+            'ocean two': join(abspath(dirname(__file__)), 'white-noise', 'ocean-2.mp3'),
+            'ocean three': join(abspath(dirname(__file__)), 'white-noise', 'ocean-3.mp3'),
+            'ocean four': join(abspath(dirname(__file__)), 'white-noise', 'ocean-4.mp3'),
+            'pink noise': join(abspath(dirname(__file__)), 'white-noise', 'pink-noise.mp3'),
+            'rain one': join(abspath(dirname(__file__)), 'white-noise', 'rain-1.mp3'),
+            'rain two': join(abspath(dirname(__file__)), 'white-noise', 'rain-2.mp3'),
+            'rain three': join(abspath(dirname(__file__)), 'white-noise', 'rain-3.mp3'),
+            'rain four': join(abspath(dirname(__file__)), 'white-noise', 'rain-4.mp3'),
+            'refrigerator': join(abspath(dirname(__file__)), 'white-noise', 'refrigerator.mp3'),
+            'shower': join(abspath(dirname(__file__)), 'white-noise', 'shower.mp3'),
+            'storm': join(abspath(dirname(__file__)), 'white-noise', 'storm.mp3'),
+            'stream one': join(abspath(dirname(__file__)), 'white-noise', 'stream-1.mp3'),
+            'stream two': join(abspath(dirname(__file__)), 'white-noise', 'stream-2.mp3'),
+            'train one': join(abspath(dirname(__file__)), 'white-noise', 'train-1.mp3'),
+            'train two': join(abspath(dirname(__file__)), 'white-noise', 'train-2.mp3'),
+            'underwater one': join(abspath(dirname(__file__)), 'white-noise', 'underwater-1.mp3'),
+            'underwater two': join(abspath(dirname(__file__)), 'white-noise', 'underwater-2.mp3'),
+            'vacuum': join(abspath(dirname(__file__)), 'white-noise', 'vaccuum.mp3'),
+            'water': join(abspath(dirname(__file__)), 'white-noise', 'water.mp3'),
+            'water boiling one': join(abspath(dirname(__file__)), 'white-noise', 'water-boiling-1.mp3'),
+            'water boiling two': join(abspath(dirname(__file__)), 'white-noise', 'water-boiling-2.mp3'),
+            'water fall': join(abspath(dirname(__file__)), 'white-noise', 'waterfall.mp3'),
+            'waves one': join(abspath(dirname(__file__)), 'white-noise', 'waves-1.mp3'),
+            'waves two': join(abspath(dirname(__file__)), 'white-noise', 'waves-2.mp3'),
+            'white noise one': join(abspath(dirname(__file__)), 'white-noise', 'white-noise-1.mp3'),
+            'white noise two': join(abspath(dirname(__file__)), 'white-noise', 'white-noise-2.mp3'),
+            'white noise three': join(abspath(dirname(__file__)), 'white-noise', 'white-noise-3.mp3'),
+            'white noise four': join(abspath(dirname(__file__)), 'white-noise', 'white-noise-4.mp3'),
+            'white noise five': join(abspath(dirname(__file__)), 'white-noise', 'white-noise-5.mp3'),
+            'white noise six': join(abspath(dirname(__file__)), 'white-noise', 'white-noise-6.mp3'),
 
         }
 
@@ -95,13 +95,13 @@ class WhiteNoiseAudio(MycroftSkill):
             return None
             self.speak('Sorry I could not find that white noise in my library')
 
-    #List stories in library
+    #List white-noise in library
     @intent_file_handler('list.white-noise.intent')
-    def handle_list_stories(self, message):
+    def handle_list_white_noise(self, message):
         wait_while_speaking()
         white_noise_list = list(self.play_list.keys())
         print(white_noise_list)
-        self.speak_dialog('list.white-noise', data=dict(stories=white_noise_list))
+        self.speak_dialog('list.white-noise', data=dict(white_noise=white_noise_list))
     
     def stop(self):
         if self.process and self.process.poll() is None:
