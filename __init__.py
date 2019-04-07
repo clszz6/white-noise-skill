@@ -56,7 +56,7 @@ class WhiteNoiseAudio(MycroftSkill):
         # Register list of white noise titles that are held in a padatious entity
         self.register_entity_file("title.entity")
         self.process = None
-        self.kill_process = None
+    
         
         # Build white noise list
         self.play_list = {
@@ -118,8 +118,6 @@ class WhiteNoiseAudio(MycroftSkill):
         # if os.path.isfile(white_noise_file):
         self.process = play_mp3(white_noise_file)
 
-        self.kill = Process(target=self.kill_noise,args=(secs,))
-        self.kill.start()
         
     #Pick white noise by title
     @intent_file_handler('pick.white-noise.intent')
