@@ -8,10 +8,10 @@ This command will allow the user to have mycroft randomly choose a white noise i
 
 Utterances available for playing a random white noise:  
 
-"Play some white noise"  
-"Play some white noise for {duration}"  
-"Play white noise"  
-"Play white noise for {duration}"  
+* "Play some white noise"  
+* "Play some white noise for {duration}"  
+* "Play white noise"  
+* "Play white noise for {duration}"  
 
 {duration} could be said in seconds, minutes, or hours. If no duration is specified in the command, the default time will be 10 minutes.  
 
@@ -22,8 +22,8 @@ This command will allow the user to choose and play any available white noise au
 
 Utterances available for playing white noise by title:  
 
-"Play me {title}"   
-"Play {title}"  
+* "Play me {title}"   
+* "Play {title}"  
 
 {title} has to be a title that mycroft already has in it's library. If no title is specified in the command, or if a title is not in the library, mycroft will politely respond with a "no title" message or a "no command" message.  
 
@@ -33,7 +33,7 @@ This command will list all the available white noise audio mp3 clips that mycrof
 
 Utterances available for listing white noise titles available:  
 
-"List white noises"   
-"What white noises do you have"   
-"What white noise do you have"   
-"What do you have for white noise"   
+* "List white noises"   
+* "What white noises do you have"   
+* "What white noise do you have"   
+* "What do you have for white noise"   
