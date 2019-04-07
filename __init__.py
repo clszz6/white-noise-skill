@@ -29,6 +29,7 @@ class WhiteNoiseAudio(MycroftSkill):
 
     def kill_noise(self,killtime):
         time.sleep(killtime)
+        self.log.info('killing')
         self.process.terminate()
 
     def __init__(self):
@@ -126,8 +127,6 @@ class WhiteNoiseAudio(MycroftSkill):
         self.process.start()
         self.kill.start()
         
-        
-
     #Pick white noise by title
     @intent_file_handler('pick.white-noise.intent')
     def handle_pick_white_noise(self, message):
@@ -153,9 +152,9 @@ class WhiteNoiseAudio(MycroftSkill):
     def stop(self):
         #if self.process and self.process.poll() is None:
         try:
-            if self.process.is_alive():
-                self.process.terminate()
-                self.process.wait()
+            #if self.process.is_alive():
+            self.process.terminate()
+            #self.process.wait()
         except:
             pass
 
