@@ -22,13 +22,22 @@ class WhiteNoiseAudio(MycroftSkill):
         MycroftSkill.__init__(self)
 
     def _extract_duration(self, text):
-    if not text:
-        return None
-    num = extract_number(utt, self.lang)
-    if not num:
-        return None
-    else:
-        return num
+        if not text:
+             return None
+        num = extract_number(text, self.lang)
+    
+        if not num:
+            return None
+        
+        unit = 1
+        if any(i.strip() in text for i in self.translate_list('second')):
+            unit = 1
+        elif any(i.strip() in text for i in self.translate_list('minute')):
+            unit = 60
+        elif any(i.strip() in text for i in self.translate_list('hour')):
+            unit = 60*60
+            
+        return num*unit
         
     def initialize(self):
         
@@ -89,7 +98,7 @@ class WhiteNoiseAudio(MycroftSkill):
         if message.data['duration']:
             duration = message.data["duration"]
             secs = self._extract_duration(duration)
-            self.speak_dialog(secs)
+            self.log.info(secs)
         white_noise_file = list(self.play_list.values())
         white_noise_file = random.choice(white_noise_file)
         print(white_noise_file)
