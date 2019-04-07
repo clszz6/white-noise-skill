@@ -27,6 +27,7 @@ class WhiteNoiseAudio(MycroftSkill):
         time.sleep(killtime)
         self.log.info('killing')
         self.process.terminate()
+        self.process.wait()
 
     def __init__(self):
         MycroftSkill.__init__(self)
@@ -117,7 +118,7 @@ class WhiteNoiseAudio(MycroftSkill):
         # if os.path.isfile(white_noise_file):
         wait_while_speaking()
         self.process = play_mp3(white_noise_file)
-        
+
         self.kill = Process(target=self.kill_noise,args=(secs,))
         self.kill.start()
         
