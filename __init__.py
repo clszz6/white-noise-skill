@@ -30,13 +30,19 @@ class WhiteNoiseAudio(MycroftSkill):
             return None
     
         unit = 1
+        self.log.info(text)
         if any(i.strip() in text for i in self.translate_list('second')):
+            self.log.info('second')
             unit = 1
         elif any(i.strip() in text for i in self.translate_list('minute')):
+            self.log.info('minute')
             unit = 60
         elif any(i.strip() in text for i in self.translate_list('hour')):
+            self.log.info('hour')
             unit = 360
 
+        self.log.info('num =' + num)
+        self.log.info('unit = ' + unit)
         return num*unit
         
     def initialize(self):
