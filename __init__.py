@@ -23,11 +23,11 @@ def initialize(self):
 
 class WhiteNoiseAudio(MycroftSkill):
 
-    def play_noise(mp3):
+    def play_noise(self,mp3):
         play_mp3(mp3)
     
 
-    def kill_noise(killtime):
+    def kill_noise(self,killtime):
         time.sleep(killtime)
         self.process.terminate()
 
