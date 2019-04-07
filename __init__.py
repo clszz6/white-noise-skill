@@ -47,7 +47,7 @@ class WhiteNoiseAudio(MycroftSkill):
         
         # Build white noise list
         self.play_list = {
-            'blender one': join(abspath(dirname(__file__)), 'white-noise', 'blender-1.mp3'),
+"""             'blender one': join(abspath(dirname(__file__)), 'white-noise', 'blender-1.mp3'),
             'blender two': join(abspath(dirname(__file__)), 'white-noise', 'blender-2.mp3'),
             'dryer one': join(abspath(dirname(__file__)), 'white-noise', 'dryer-1.mp3'),
             'dryer two': join(abspath(dirname(__file__)), 'white-noise', 'dryer-2.mp3'),
@@ -80,7 +80,7 @@ class WhiteNoiseAudio(MycroftSkill):
             'water boiling two': join(abspath(dirname(__file__)), 'white-noise', 'water-boiling-2.mp3'),
             'water fall': join(abspath(dirname(__file__)), 'white-noise', 'waterfall.mp3'),
             'waves one': join(abspath(dirname(__file__)), 'white-noise', 'waves-1.mp3'),
-            'waves two': join(abspath(dirname(__file__)), 'white-noise', 'waves-2.mp3'),
+            'waves two': join(abspath(dirname(__file__)), 'white-noise', 'waves-2.mp3'), """
             'white noise one': join(abspath(dirname(__file__)), 'white-noise', 'white-noise-1.mp3'),
             'white noise two': join(abspath(dirname(__file__)), 'white-noise', 'white-noise-2.mp3'),
             'white noise three': join(abspath(dirname(__file__)), 'white-noise', 'white-noise-3.mp3'),
