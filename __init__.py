@@ -121,10 +121,10 @@ class WhiteNoiseAudio(MycroftSkill):
         wait_while_speaking()
         # self.process = play_mp3(white_noise_file)
         self.process = Process(target=play_noise,args=(white_noise_file,))
-        #self.kill = Process(target=kill_noise,args=(secs,))
+        self.kill = Process(target=kill_noise,args=(secs,))
 
         self.process.start()
-        #self.kill.start()
+        self.kill.start()
         
         
 
@@ -151,7 +151,8 @@ class WhiteNoiseAudio(MycroftSkill):
         self.speak_dialog('list.white-noise', data=dict(white_noise=white_noise_list))
     
     def stop(self):
-        if self.process and self.process.poll() is None:
+        #if self.process and self.process.poll() is None:
+        if !self.process.is_alive():
             self.process.terminate()
             self.process.wait()
 
