@@ -31,13 +31,13 @@ class WhiteNoiseAudio(MycroftSkill):
     
         unit = 1
         self.log.info(text)
-        if ('sec', 'secs', 'second', 'seconds') in text:
+        if text.find('sec'):
             self.log.info('second')
             unit = 1
-        elif ('min', 'mins', 'minute', 'minutes') in text:
+        elif text.find('min'):
             self.log.info('minute')
             unit = 60
-        elif ('hr', 'hrs', 'hour', 'hours') in text:
+        elif text.find('hour'):
             self.log.info('hour')
             unit = 360
 
