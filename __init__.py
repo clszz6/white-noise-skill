@@ -17,7 +17,11 @@ from mycroft.skills.context import *
 def initialize(self):
         self.register_entity_file('duration.entity')
 
-def _extract_duration(self, text):
+class WhiteNoiseAudio(MycroftSkill):
+    def __init__(self):
+        MycroftSkill.__init__(self)
+
+    def _extract_duration(self, text):
     if not text:
         return None
     num = extract_number(utt, self.lang)
@@ -25,11 +29,6 @@ def _extract_duration(self, text):
         return None
     else:
         return num
-
-
-class WhiteNoiseAudio(MycroftSkill):
-    def __init__(self):
-        MycroftSkill.__init__(self)
         
     def initialize(self):
         
