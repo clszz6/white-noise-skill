@@ -13,6 +13,9 @@ from mycroft.audio import wait_while_speaking
 from mycroft import MycroftSkill, intent_file_handler
 from mycroft.skills.context import *
 
+def initialize(self):
+        self.register_entity_file('duration.entity')
+
 
 class WhiteNoiseAudio(MycroftSkill):
     def __init__(self):
