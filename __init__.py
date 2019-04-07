@@ -11,10 +11,20 @@ from mycroft.util.parse import fuzzy_match
 from mycroft.util.parse import match_one
 from mycroft.audio import wait_while_speaking
 from mycroft import MycroftSkill, intent_file_handler
+from mycroft.util.parse import extract_number
 from mycroft.skills.context import *
 
 def initialize(self):
         self.register_entity_file('duration.entity')
+
+def _extract_duration(self, text):
+    if not text:
+        return None
+    num = extract_number(utt, self.lang)
+    if not num:
+        return None
+    else:
+        return num
 
 
 class WhiteNoiseAudio(MycroftSkill):
@@ -78,7 +88,9 @@ class WhiteNoiseAudio(MycroftSkill):
         wait_while_speaking()
         self.speak_dialog('white-noise.relax')
         if message.data['duration']:
-            self.speak_dialog(message.data['duration'])
+            duration = message.data["duration"]
+            secs = self._extract_duration(duration)
+            self.speak_dialog(secs)
         white_noise_file = list(self.play_list.values())
         white_noise_file = random.choice(white_noise_file)
         print(white_noise_file)
