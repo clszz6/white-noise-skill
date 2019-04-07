@@ -152,9 +152,12 @@ class WhiteNoiseAudio(MycroftSkill):
     
     def stop(self):
         #if self.process and self.process.poll() is None:
-        if !self.process.is_alive():
-            self.process.terminate()
-            self.process.wait()
+        try:
+            if self.process.is_alive():
+                self.process.terminate()
+                self.process.wait()
+        except:
+            pass
 
 def create_skill():
     return WhiteNoiseAudio()
