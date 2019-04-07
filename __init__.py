@@ -74,6 +74,8 @@ class WhiteNoiseAudio(MycroftSkill):
     def white_noise_relax(self, message):
         wait_while_speaking()
         self.speak_dialog('white-noise.relax')
+        if message.data['duration']:
+            self.speak_dialog(message.data['duration'])
         white_noise_file = list(self.play_list.values())
         white_noise_file = random.choice(white_noise_file)
         print(white_noise_file)
